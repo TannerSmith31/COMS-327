@@ -1,0 +1,299 @@
+
+********************************************************ASSIGNMENT 2.0**********************************************************************
+4/19/23: 3:33am
+    >had an epiphany (though long rooted) on what to do for my project
+
+4/20/23: 10:00pm
+    >made some pseudocode on how to generate a random maze
+    >solidified more details of the Catacombs such as having the doors open once you press a button and having each map travel 4 maps in the overworld
+
+4/21/23: 11:00pm
+    >updated my map constructor to create catacomb entrances if the map's world map position was divisible by 4
+    >combined my generateMap() function into the constructor of my map class (ive been wanting to do that since we switched to C++)
+    >made a class for the catacombs and made code to generate the doors between them (simmilar to gates in the overworld)
+    >made a class that will help me create the catacomb maze.
+    >updated my printboard() function to print out graves and catacomb entrances.
+    >got the catacomb constructor to kinda make paths from the doors (there are some bugs in the code right now)
+
+4/22/23: 12:00AM
+    >made more progress on the constructor for catacomb rooms. I have gotten the paths to connect correctly and generate a few additional red-herring paths,
+     but something isn't quite right about the generation of the red-herring paths and I would like them to be more evenly spread throughout the map.
+    >Also updated the catacomb constructor to place a button randomly on a path in the maze.
+
+4/24/23: 10:30pm
+    >made the function to enter and exit the catacombs from the overworld.
+    >made the enterDoor() function that allows you to go between catacomb maps
+    >started to incorporate player movement in the catacombs. Player can move in the 4 cardinal directions and when they hit a button it opens all the doors and when they walk over an entrance, they are brought to the overworld
+
+4/30/23: 12:00AM
+    >made the doors open correctly when traveling between maps
+    >made the function that only prints out the catacomb map around the player (like a lamp)
+
+5/1/23: 10:00PM
+    CHANGED TO V5
+    >made my catacomb mazes generate with better connection between doors
+
+*********************************************************ASSIGNMENT 9*************************************************************************
+4/16/23: 9:30pm
+    >decreased the ammount of information printed when battling NPCs and reorgainzed a battling
+    >Made the part of the NPC battle function that alloweds the user to flee the battle
+    >Started to work on the part of the battle where the player and NPC use moves.
+    >fixed an error where pokemon would spawn with the same moves (this was due to different moves being considered "different" depending on the game they were in reference to)
+    >made it so if you press the 'B' button, you can use items on the menu
+        >HOWEVER: this is very bad right now. I need to update it so that you can only call revive on dead pokemon and potions on live ones. Also do more to check for
+         invalid input
+
+4/18/23: 10:30pm
+    >Implemented the switch pokemon option in the battle function
+    >Implemented most of the battleWildPokemon function (all except capturing it and bag)
+    >Got all but pokeballs working in the bag
+
+4/19/23: 10:00AM
+    >fully implemented pokemon and trainer battles
+    >got the pokeballs to capture pokemon
+    >made a few helper functions to check how many pokemon in a party were dead
+    >updated the code so you can't run from trainer battles
+
+*********************************************************ASSIGNMENT 8**************************************************************************
+4/8/23: 10:00PM
+    >made some pseudocode for a function that generates random pokemon
+    >made very short list of what to put in an inGame pokemon object
+
+4/9/23: 11:00PM
+    >transfered my files to an assignment 8 folder
+    >implemented some of the code for creating a random pokemon, but got stuck on the statements
+
+4/10/23: 11:30pm
+    >finished making the code to randomly create a pokemon based on your location on the world map
+    >made random pokemon have a 10% chance to spawn when walking through tall grass
+    >made it so NPCs have pokemon when they spawn
+
+4/11/23: 12:00pm
+    >made the battle function print out the NPC's pokemon when you battle them
+    >made the code that lets the player choose a starting pokemon
+    >adjusted the inGamePokemon class to hold the IV values of each pokemon so that we can level them up correctly
+
+4/12/23: 1:00pm
+    >made code to level up a pokemon. This is called when the user enters the 'L' key
+    >made it so that the players pokemon is printed out when you encounter a pokemon in the grass
+
+
+*********************************************************ASSIGNMENT 7***************************************************************************
+4/1/23: 1:00AM
+    >Finally changed all of my structures into C++ classes and fixed all the errors associated with doing so
+    >fixed the issue of the game freezing when you go back and forth between maps too quickly (it seemed to have something to do with a sentry spawning
+    at (0,0) for some reason)
+
+4/2/23: 8:00PM
+    >Moved a lot of my functions into their respective classes for C++
+    >did some research on file pointers in C++
+    >Created the skelletons of my classes that will hold the information from the CSV files
+
+4/5/23: 1:00AM
+    >finished making my function to parse the csv files
+    >made the code in main that will create the vector of the correct class type and print out the contents of the csv files
+        >still need to make the int_max members of objects print as spaces though
+
+
+*********************************************************ASSIGNMENT 6***************************************************************************
+3/26/23: 3:00PM
+    >made very bad pseudocode for a function that moves from map to map through gates
+    >made very vague pseudocode for a fly function
+    >attempted to transpose the code from C to C++ but failed miserably
+
+3/27/23: 10:00PM
+    >Started implementing a function that moves the player from map to map through gates (specifically through the north gate), but currently it seg faults
+
+3/28/23: 11:00PM
+    >Fixed the seg faults in the gates function and made all the gates work for each direction
+    >Made better pseudo code for the fly function
+
+3/29/23: 12:00AM
+    >implemented fly method to go from map to map. Currently the player teleports to their current location on the new map, but I am gonna try to fix that
+
+
+*********************************************************ASSIGNMENT 5***************************************************************************
+3/05/23: 10:00PM
+    >researched NCurses to get a better understanding of how it works
+    >implemented an InitializeTerminal() function to initialize the terminal for NCurses
+
+3/10/23: 11:00PM
+    >Changed all of my code to work with ncurses (specifically, all the print statements)
+    >Made the switch function that takes the user's input and does certain things depending on the key pressed
+
+3/13/23: 11:00AM
+    >Implemented the 8 switch cases that move the player arround when you press the 8 directional move keys
+    >made pseudocode for entering building function and display character screen
+
+3/19/23: 4:00PM
+    >Implemented the enterBuilding() function that prints out a new screen when the player enters a building
+    >created a clearScreen() functiont that clears the Screen (it prints spaces everywhere)
+    >created a displayTrainersList() function that prints all the trainers on the given map to the screen
+    >made a battle() function that is called durring a battle. Currently it just sets the isDefeated value of the NPC you are battling to 1 and returns.
+    >Tried to adjust the moveCharacters function to battle NPCs at the correct time, but I am running into a lot of issues
+
+3/20/23:  3:33PM
+    >fixed the battle mechanic so that you don't get caught in an infinite loop. The issue had to do with the fact that I was handling when an NPC runs 
+    into the PC and the PC runs into an NPC the same way.
+
+3/20/23: 10:00PM
+    >added COLOR!!
+    >updated my code so that when the user doesn't enter a number into the command line, 10 trainers are added to the map
+
+3/21/23: 1:00PM
+    >made it so merpeople attack the player when they are in a water square adjacent to the player
+
+
+*********************************************************ASSIGNMENT 4*****************************************************************************
+
+2/20/23: 7:00pm
+    >Wrote out pseudocode for how our player movement queue would work and what our queue would need in it
+
+2/22/23: 12:00AM
+    >created a new GodQueue that combines my BiomeQueue, CostMapQueueu, and my soon to exist PlayerQueue
+    
+    Errors:
+    >after redoing my queue I am getting stuck in an infinite loop or get a segmentation fault.
+
+2/24/23: 2:00pm
+    >fixed all the errors in my code caused by the new queue implementation
+    >fixed memory leak issues that were present since the first assignment that I didn't realize
+
+2/28/23: 1:00AM
+    >created a function to determine an NPC's next position based on their current position and directional (excluding swimmer)
+    >created a function to set a single character into the character map and queue
+    >created a function to set ALL characters into the character map and queue
+
+2/28/23: 8:00PM - 4:00AM
+    >updated all instances of "map" structure to "Map" structure   
+    >turned character types into an Enum
+    >added a new "BRIDGE" terrain type for paths that cross water
+    >updated printMap() function to print charcters
+    >fixed a bunch of errors so that my characters now print to the map
+    >made pseudocode to generate a swimmers next move.
+    >created the moveCharacters() function that implements the character queue and simulates player movement
+
+2/29/23: 1:00PM
+    >turned my swimmer pseudocode into actual code
+
+
+*********************************************************ASSIGNMENT 03********************************************************************   
+
+2/11/23 5:00pm
+    >created a player struct
+    >updated the world map struct to store the cost maps
+    >created the function to generate the player character on a random road
+    >created the container for a function the generates a cost map
+
+2/12/23: 11:00pm
+    >created Makefile and read-Makefile
+    >developed the idea for a calculate cost function
+
+2/14/23: 3:30am
+    >finally understood Dijkstra's Algorithm...
+    >developed a priority queue for Dijkstra's Algorithm
+    >created the pseudocode for a cost function, a decrease_priority function (for the queue), Dijkstra's algorithm, and a backup for Dijkstra's.
+
+2/15/23: 11:55am
+    >Converted map and all lines of code relating to terrain from an array of characters to an array of numbers that represent the terrain
+    >added a few more biomes (mountain and forest)
+    >wrote a calc_cost function that takes in a terrain type and character type and tells what the cost of moving to that square is.
+    >implemented the decrease_priority function for my queue
+
+2/16: 10:00pm
+    >implemented about half of my genCostMap() function which utilizes my own version on a Dijkstra's algorithm that works for our 
+    specific scenario
+
+2/18: 7:00pm
+    >finished my genCostMap() function
+    >wrote the readMe file
+    >fixed all the compile errors in my code (including those with -Wall and -Werror)
+
+
+*********************************************************ASSIGNMENT 2*******************************************************************************
+
+2/5/23 9:00PM
+    PROGRESS:
+    >created the world map structure
+    >created a function to initialize the world map structure
+    >seperate the map creation from main and put it into a seperate function called 'generateNewMap'
+    >Added the base while loop to main that runs until the player enters 'q'
+    >worked on the initializing world function and gate generation
+
+    ERRORS:
+    >keep getting segmentation fault when generating a new map (I suspect it has to do with my World Map initialization)
+
+2/6/23 12:00AM
+    PROGRESS:
+    >added pseudocode for the fly method
+    >added pseudocode for the movement in main
+    >moved the print function to main and have a piece of code to print off current WorldMap coords
+    >Located the line that is causing the segmentation fault when generating a new map (though haven't found how to fix it)
+
+    ERRORS:
+    >Not getting segmentation fault anymore, but when I try to print the board it prints the top fine 
+     but slowly devolves into minecraft enchantment language...i.e. there is a memmory issue somewhere.
+
+
+2/7/23 11:00AM
+    PROGRESS:
+    >fixed the map generation bug
+    >Implemented the directional move commands
+    >Implemented the fly fucntion (though it still needs work)
+    >added the 4 cardinal gate locations into the map structure
+    >edited the mapGenerator function to determine where the gates should be
+
+    ERRORS:
+    >edge path cases don't behave properly
+
+2/8/23 1:30am
+    >fixed coordinate printing to console to be in reference to the center being (0,0) instead of (200,200)
+    >made pokeMarts and pokeCenters generate less frequently the farther out you are
+    >edited the path generator function to not generate gates in the walls when at the edge of the world
+    >updated the fly method to take destination and current position parameters
+
+
+*********************************************************ASSIGNMENT 1***********************************************************************
+
+1/30/23 10:00pm: 
+    >made the map structure
+    >Made the function to initialize the map
+    >Made the function to generate the boarder of rocks.
+    >created the Biome queue
+    >created a pseudo code for a function to generate biomes
+
+1/31/23 6:00pm:
+    >made the biome generation method(though it still has a bug somewhere becasue it will give me segmentation faults every once in a blue moon)
+    >made the function to generate random terrain objects (rocks & trees)
+    >developed some pseudo code for a function to generate paths
+
+1/31/23 9:30pm:
+    >made the function to generate the roads
+    >made pseudocode for a generateBuildings function that would place pokemarts and pokeCenters. Has a bug that causes an infinite loop.
+
+1/31/23 11:20pm:
+    >fixed bug in the generateBuildings function.
+    >finalized main to call all the world generation functions in the correct order
+
+
+
+
+TODO: 
+    >make a TTtoChar() function that takes a TT as a parameter and returns the corresponding character (letter)
+    >in battle() possibly remove the NPC from the character queue when its been defeated (IDK the best way to do this though)
+    >make the destructors for my classes
+    >put the generateChars() function into the map class (if i can figure out how to create an NPC before the NPC class is declared)
+    >put the findNextPos() function into the NPC class
+    >make it so it prints an astrict next to shiny pokemon name
+    >make it so that you can only use one item in battles (just add return statements if location = 2 or 3)
+    >put attacker function into character class and also add a "name" variable to character class
+    >make the escape button of the bag in the upper right corner
+    >print off "hiker" or "rival", or... when in battle with an enemy.
+    >make the bag panel be 1 smaller than the battle pannel (will look better in battle)
+    >maybe update it so that the graves don't spawn in the water
+
+Known Errors:
+    >Catacomb entrances sometimes don't spawn when they should (I entered through the overworld and there was no entrance
+        where I spawned in the catacomb. This is likely due to a pathmaker overwritting it when it was making a path)
+    >When I uncomment the "generateCharacters()" line when I leave the catacombs I sometimes get an infinite loop or a seg fault. [THE INFINITE LOOP IS THE CHARACTER MOVEMENT LOOP!!!]
+
